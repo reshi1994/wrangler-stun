@@ -4,15 +4,15 @@ compatibility_date = "2025-07-05"
 workers_dev = true
 
 [[routes]]
-pattern = "stun.reshi1994.vip"
+pattern = "stun.example.com"
 custom_domain = true
 
 [vars]
-DOMAIN = "reshi1994.vip"
-SUBDOMAINS = "lucky,openwrt,portainer,filerun,seafile,sci"
-BEARER_TOKEN = "2f95f486-6ef9-4e06-beae-a46406adb8f1"
+DOMAIN = "example.com"
+SUBDOMAINS = "openwrt,portainer"
+BEARER_TOKEN = ""
 
 [[d1_databases]]
 binding = "LUCKY"
 database_name = "lucky"
-database_id = "d6f7f13f-e0d6-408e-b24a-1d3a4a2c873e"
+database_id = ""
