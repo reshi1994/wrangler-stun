@@ -146,10 +146,8 @@ curl your custom_domain or worker_dev doamin to update stun public port.
 | ------------------------ | -------------------- | ------------------------------------------------------------------------- |
 | `-p`,`--port`  | ✅ required        | Public port to be updated and written into the database.                |
 | `-t`,`--token` | ✅ required        | `BEARER_TOKEN`used for authorization. Must match backend.           |
-| `-u`,`--url`   | ✅ required        | Target domain for the Worker, e.g. a custom domain or`workers.dev`. |
+| `-u`,`--url`   | ✅ required        | Target domain for the Worker, e.g. a `custom domain` or`workers.dev`. |
 
-
-custom_domain or worker dev domain
 
 -   in lucky script.
     
