@@ -4,7 +4,6 @@
   "description": "自动创建并初始化 Cloudflare D1 数据库及 Worker",
   "type": "module",
   "scripts": {
-    "init-d1": "node init-d1.mjs",
     "deploy": "wrangler deploy"
   },
   "dependencies": {
