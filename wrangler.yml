@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  wrangler:
+    image: ${WRANGLER_IMAGE:-reshi/wrangler-dev}  # 无空格！默认值不能带空格
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wrangler-dev
+    working_dir: /workspace
+    volumes:
+      - ${WRANGLER_WORKSPACE_PATH:-./workspace}:/workspace
+      - ${WRANGLER_CONFIG_PATH:-./wrangler_config}:/root/.wrangler
+    # environment:
+    #   CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN}
+    ports:
+      - "18787:8787"        # 宿主机端口:容器端口
+    tty: true
+    stdin_open: true
+    entrypoint: bash         # 进入容器后手动运行 wrangler 命令
