@@ -108,7 +108,7 @@ npm install
 
 ### Step4
 
-📄 wrangler.jsonc 配置说明
+### 📄 [`wrangler.jsonc`](https://developers.cloudflare.com/workers/wrangler/configuration/#custom-domains) 配置说明
 | **Key**              | **Required** | **Description**                                                                                                                                                                                                                                                                                                     |
 | -------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`               | ✅ required   | The name of your Worker. Only alphanumeric characters (`a`, `b`, `c`, etc.) and dashes (`-`) are allowed. Underscores (`_`) are **not** allowed.                                                                                                                                                                    |
@@ -140,29 +140,14 @@ wrangler deploy
 
 curl your custom_domain or worker_dev doamin to update stun public port.
 
-**update_public_port.sh**
+### 📜 `update_public_port.sh` 参数说明
 
-keys
+| **Key**          | **Required** | **Description**                                                   |
+| ------------------------ | -------------------- | ------------------------------------------------------------------------- |
+| `-p`,`--port`  | ✅ required        | Public port to be updated and written into the database.                |
+| `-t`,`--token` | ✅ required        | `BEARER_TOKEN`used for authorization. Must match backend.           |
+| `-u`,`--url`   | ✅ required        | Target domain for the Worker, e.g. a custom domain or`workers.dev`. |
 
-define
-
-desc
-
-`-p, --port`
-
-required
-
-public port
-
-`-t, --token`
-
-required
-
-BEAR_TOKEN
-
-`-u, --url`
-
-required
 
 custom_domain or worker dev domain
 
