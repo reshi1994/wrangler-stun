@@ -108,110 +108,18 @@ npm install
 
 ### Step4
 
-| [**worker.jsonc**](https://developers.cloudflare.com/workers/wrangler/configuration/#custom-domains) |
-| --------------------------------------------------------------------------------------------------------- |
-| **keys**                                                                                          | **define** | **desc** |
-| name                                                                                                    | required | The name of your Worker. Alphanumeric characters (`a`,`b`,`c`, etc.) and dashes (`-`) only. Do not use underscores (`_`) |
-| main                                                                                                    | required | The path to the entrypoint of your Worker that will be executed. For example:`./worker.js` |
-| compatibility\_date                                                                                     | required | A date in the form`yyyy-mm-dd`, which will be used to determine which version of the Workers runtime is used. |
-| routes                                                                                                  |  | * `pattern` required* The pattern that your Worker should be run on, for example,`"stun.example.com"`.* `custom_domain` optional* Whether the Worker should be on a Custom Domain as opposed to a route. Defaults to`false`. |
-| vars                                                                                                    | required | * `DOMAIN` required* your domain, for example,`"example.com"`.* `SUBDOMAINS` requiredyour domain, for example,`"example.com"`.* `SUBDOMAINS` required* your subdomain, for example,`"openwrt,portainer"`.* split by ","* `BEAR_TOKEN` default* default`"873bd064-47e8-4fba-99e0-2ccd42feb52f"`* used for update your public port.* change your self must ! |
-| d1\_databases                                                                                           | optional | * `binding` default* LUCKY  binding name in worker.* `database_name  `default* lucky binding database name in d1 database.* `database_id `default* when we init d1 database, it auto generate or updated. |
-| workers\_dev                                                                                            | optional | * custom\_domain is`true`, workers\_dev set`false`. |
+📄 wrangler.jsonc 配置说明
+| **Key**              | **Required** | **Description**                                                                                                                                                                                                                                                                                                     |
+| -------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`               | ✅ required   | The name of your Worker. Only alphanumeric characters (`a`, `b`, `c`, etc.) and dashes (`-`) are allowed. Underscores (`_`) are **not** allowed.                                                                                                                                                                    |
+| `main`               | ✅ required   | Path to the Worker entry file. Example: `./worker.js`.                                                                                                                                                                                                                                                              |
+| `compatibility_date` | ✅ required   | Date string in the format `yyyy-mm-dd` that defines the Workers runtime version. Example: `"2025-07-04"`.                                                                                                                                                                                                           |
+| `routes`             | optional     | Specifies the domain routes for your Worker. <br>• `pattern` (required): e.g. `"stun.example.com"` <br>• `custom_domain` (optional): defaults to `false`.                                                                                                                                                           |
+| `vars`               | ✅ required   | Environment variables available in your Worker: <br>• `DOMAIN`: Your root domain, e.g. `"example.com"` <br>• `SUBDOMAINS`: Comma-separated list, e.g. `"openwrt,portainer"` <br>• `BEARER_TOKEN`: Default value `"873bd064-47e8-4fba-99e0-2ccd42feb52f"` (used for public port updates — **you must change this**). |
+| `d1_databases`       | optional     | Configuration for binding D1 databases to your Worker. <br>• `binding`: Variable name for use in Worker, e.g. `"LUCKY"` <br>• `database_name`: e.g. `"lucky"` <br>• `database_id`: Automatically generated or updated during initialization.                                                                        |
+| `workers_dev`        | optional     | Whether to deploy to the `*.workers.dev` subdomain. If using a `custom_domain`, this should usually be set to `false`.                                                                                                                                                                                              |
 
 
-
-wrangler.jsonc args instruction
-
-[**worker.jsonc**](https://developers.cloudflare.com/workers/wrangler/configuration/#custom-domains)
-
-**keys**
-
-**define**
-
-**desc**
-
-name
-
-required
-
-The name of your Worker. Alphanumeric characters (`a`,`b`,`c`, etc.) and dashes (`-`) only. Do not use underscores (`_`)
-
-main
-
-required
-
-The path to the entrypoint of your Worker that will be executed. For example: `./worker.js`
-
-compatibility_date
-
-required
-
-A date in the form `yyyy-mm-dd`, which will be used to determine which version of the Workers runtime is used.
-
-routes
-
--   `pattern` required
-    
-    -   The pattern that your Worker should be run on, for example, `"stun.example.com"`.
-        
--   `custom_domain` optional
-    
-    -   Whether the Worker should be on a Custom Domain as opposed to a route. Defaults to `false`.
-        
-
-vars
-
-required
-
--   `DOMAIN` required
-    
-    -   your domain, for example, `"example.com"`.
-        
--   `SUBDOMAINS` required
-    
-
-your domain, for example, `"example.com"`.
-
--   `SUBDOMAINS` required
-    
-    -   your subdomain, for example, `"openwrt,portainer"`.
-        
-    -   split by ","
-        
-
--   `BEAR_TOKEN` default
-    
-    -   default `"873bd064-47e8-4fba-99e0-2ccd42feb52f"`
-        
-    -   used for update your public port.
-        
-    -   change your self must !
-        
-
-d1_databases
-
-optional
-
--   `binding` default
-    
-    -   LUCKY binding name in worker.
-        
--   `database_name` default
-    
-    -   lucky binding database name in d1 database.
-        
-
--   `database_id` default
-    
-    -   when we init d1 database, it auto generate or updated.
-        
-
-workers_dev
-
-optional
-
--   custom_domain is `true` , workers_dev set `false` .
     
 
 -   init d1
