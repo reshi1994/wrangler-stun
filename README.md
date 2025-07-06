@@ -1,4 +1,4 @@
-# wrangler-stunwrangler-stun
+# wrangler-stun
 
 ### 🌐 STUN Redirect Service Based on Cloudflare Workers
 
