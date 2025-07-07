@@ -1,0 +1,14 @@
+{
+  "name": "cloudflare-worker-d1",
+  "version": "1.0.0",
+  "description": "自动创建并初始化 Cloudflare D1 数据库及 Worker",
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "@iarna/toml": "^3.0.0",
+    "execa": "^8.0.1",
+    "fs-extra": "^11.2.0"
+  }
+}

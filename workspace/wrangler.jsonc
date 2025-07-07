@@ -1,0 +1,27 @@
+{
+    "compatibility_date": "2025-07-04",
+    "name": "stun-redirect",
+    "main": "./worker.js",
+    "triggers": {},
+    "preview_urls": false,
+    "workers_dev": true,
+    "routes": [
+        {
+          "pattern": "shop.example.com",
+          "custom_domain": true
+        }
+      ],
+    "vars": {
+    "DOMAIN": "example.com",
+    "SUBDOMAINS": "openwrt,portainer",
+    "BEARER_TOKEN": "873bd064-47e8-4fba-99e0-2ccd42feb52f"
+    },
+    "d1_databases": [
+        {
+          "binding": "LUCKY",
+          "database_name": "lucky",
+          "database_id": "<DATABASE_ID>"
+        }
+      ]
+
+}
